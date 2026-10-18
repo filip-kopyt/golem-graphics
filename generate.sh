@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TITLE="Jakiś ciekawy tytuł"
-SPEAKER="Jozin z Bazin"
-DATE="31 lutego 1670"
-LOCATION="Pałac w Wyzimie"
-HOUR="21:37"
+TITLE="LLM-Y LOKALNIE, WALKA O TOKENY I DLACZEGO JESZCZE NIE UCZĄ TEGO NA UCZELNIACH"
+SPEAKER="GRZEGORZ KURZEJAMSKI"
+DATE="22 PAŹDZIERNIKA 2026"
+LOCATION="WEITI SALA 105"
+HOUR="18:15"
 
 sed -E -e "s/%TITLE%/$TITLE/g" \
        -e "s/%SPEAKER%/$SPEAKER/g" \
@@ -15,10 +15,10 @@ sed -E -e "s/%TITLE%/$TITLE/g" \
 
 echo "substitution done"
 
-for i in {0..9}
-do
-    vectorcraft-cli convert /tmp/injected.vectorcraft out/art$i.png --scale 2 --artboard $i
-    echo "art $i generated"
-done
+vectorcraft-cli convert /tmp/injected.vectorcraft out/instgram.png --scale 1 --artboard 1
+vectorcraft-cli convert /tmp/injected.vectorcraft out/linkedin.png --scale 1.33333 --artboard 8
+vectorcraft-cli convert /tmp/injected.vectorcraft out/ekrany.png --scale 1 --artboard 6
+vectorcraft-cli convert /tmp/injected.vectorcraft out/discord.png --scale 2 --artboard 9
+vectorcraft-cli convert /tmp/injected.vectorcraft out/facebook.png --scale 1.33333 --artboard 8
 
 echo "done"
